@@ -38,3 +38,21 @@ Scenario: delete movie
   And  I press "Delete"
   Then  I should be on the home page 
   And   I should see "Movie 'THX-1138' deleted."
+
+Scenario: sort movies alphabetically
+  Given I am on the home page
+  When I follow "Movie Title"
+  Then I should see "Blade Runner" before "Star Wars"
+  And I should see "Alien" before "THX-1138"
+  
+Scenario: add movie
+  Given I am on the home page
+  And  I follow "Add new movie"
+  Then I should be on the new movie page
+  When I fill in "Title" with "Black Panther"
+  And I select "R" from "Rating"
+  And I select "2017-01-01" from "release_date"
+  And I fill in "Director" with "Ryan Coogler"
+  And I press "Save Changes"
+  Then I should be on the RottenPotatoes home page
+  And I should see "The Black Panther was successfully created."
