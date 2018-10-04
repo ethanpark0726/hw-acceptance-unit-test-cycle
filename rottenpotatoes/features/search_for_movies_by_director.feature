@@ -55,4 +55,4 @@ Scenario: add movie
   And I fill in "Director" with "Ryan Coogler"
   And I press "Save Changes"
   Then I should be on the RottenPotatoes home page
-#  And I should see "The Black Panther was successfully created."
+#  And I should see "The Black Panther was successfully created." 
